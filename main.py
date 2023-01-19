@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
 import functions as fn
 
 df = pd.read_csv("happy.csv")
@@ -32,12 +31,8 @@ y = fn.get_label(index_y)
 
 x_ax, y_ax, fig = fn.get_data(valuex=x, valuey=y, op1=option1, op2=option2)
 
-figure = px.scatter(data_frame=df, x=x, y=y, hover_data=["country"], color="happiness")
 
 st.plotly_chart(fig)
-st.plotly_chart(figure)
-
-st.session_state
 
 
 
